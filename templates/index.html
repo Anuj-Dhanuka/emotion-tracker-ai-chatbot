@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Mood Journal</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.28.0/plotly.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex flex-col">
+        <header class="bg-white shadow-sm">
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <h1 class="text-3xl font-bold text-gray-900">Daily Mood Journal - Anuj</h1>
+            </div>
+        </header>
+
+        <main class="flex-grow">
+            <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+                <div class="bg-white shadow rounded-lg p-6">
+                    <div class="mb-6">
+                        <h2 class="text-xl font-semibold mb-2">Chat with your AI companion</h2>
+                        <div id="chatContainer" class="h-[400px] overflow-y-auto p-4 mb-6">
+                            <!-- Chat messages will be added here -->
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <textarea id="chatInput" 
+                                      class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                      rows="4" placeholder="Type your message here..."></textarea>
+                            <button onclick="sendMessage()"
+                                    class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                                Send
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="moodHistory" class="mt-8">
+                        <h3 class="text-lg font-semibold mb-4">Your Recent Moods</h3>
+                        <div id="moodChart"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.28.0/plotly.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

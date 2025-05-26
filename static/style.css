@@ -1,0 +1,53 @@
+/* Custom styles for the mood journal */
+
+/* Emotion icons */
+.emotion-happy::before {
+    content: "😊";
+}
+
+.emotion-sad::before {
+    content: "😔";
+}
+
+.emotion-angry::before {
+    content: "😡";
+}
+
+.emotion-anxious::before {
+    content: "😢";
+}
+
+.emotion-excited::before {
+    content: "🤩";
+}
+
+/* Smooth transitions */
+button {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Responsive design tweaks */
+@media (max-width: 640px) {
+    .max-w-7xl {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+}
